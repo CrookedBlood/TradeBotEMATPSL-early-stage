@@ -51,3 +51,23 @@ elif current_price < ema_20.iloc[-1]:
     print("Sell Signal")
 else:
     print("Hold Signal")
+import io
+import pandas as pd
+
+# Create a StringIO object from the CSV data
+csv_data = io.StringIO("""
+Date,Open,High,Low,Close,Volume
+2023-01-01,100.00,105.00,99.00,102.00,10000
+2023-01-02,102.00,106.00,100.00,103.00,11000
+2023-01-03,103.00,107.00,101.00,104.00,12000
+2023-01-04,104.00,108.00,102.00,105.00,13000
+2023-01-05,105.00,109.00,103.00,106.00,14000
+2023-01-06,106.00,110.00,104.00,107.00,15000
+2023-01-07,107.00,111.00,105.00,108.00,16000
+2023-01-08,108.00,112.00,106.00,109.00,17000
+2023-01-09,109.00,113.00,107.00,110.00,18000
+2023-01-10,110.00,114.00,108.00,111.00,19000
+""")
+
+# Load the data from the StringIO object into a DataFrame
+data = pd.read_csv(csv_data)
